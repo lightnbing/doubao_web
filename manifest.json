@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "豆包对话导出助手",
+  "version": "1.0",
+  "description": "将豆包对话内容导出到Excel文件",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.doubao.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://*.doubao.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle",
+    "world": "MAIN",
+    "all_frames": true
+  }]
+}
