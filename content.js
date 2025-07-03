@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           // 检查是否为分隔符
           const divider = element.querySelector('[data-testid="message_section_divider"]');
           if (divider) {
-            const dividerText = divider.querySelector('.text-WR4VbJ')?.textContent?.trim();
+            const dividerText = divider.innerText.trim();
             if (dividerText) {
               // 如果当前对话不为空，将其添加到所有对话列表中
               if (currentDialog.length > 0 && !isNewDialog) {
